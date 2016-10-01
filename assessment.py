@@ -16,9 +16,9 @@ def all_odd(numbers):
         >>> all_odd([2, -6, 8])
         []
     """
+    odd_nums = [num for num in numbers if num % 2 != 0]
 
-    return ['the wrong thing']
-
+    return odd_nums
 
 def print_indices(items):
     """Print index of each item in list, followed by item itself.
@@ -38,8 +38,8 @@ def print_indices(items):
         1 Jeep
         2 Volvo
     """
-
-    print "Nothing at all"
+    for i, item in enumerate(items):
+        print i, item
 
 
 def foods_in_common(foods1, foods2):

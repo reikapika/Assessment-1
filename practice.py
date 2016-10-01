@@ -17,8 +17,10 @@ def print_list(items):
         3
         9
     """
+    for i in items:
+        print i
 
-    print "the wrong thing"
+print_list([1,3,5,5,2,6])
 
 
 def long_words(words):
