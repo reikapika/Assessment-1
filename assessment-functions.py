@@ -1,3 +1,14 @@
+"""
+
+This is to set up doctest for the assessment functions below.
+
+PART ONE:
+    >>>cost_with_tax(0.05,CA,5)
+    5.25
+
+
+
+"""
 # PART ONE
 
 # 1. We have some code which is meant to calculate an item cost
@@ -12,14 +23,44 @@
 #    Your function should return the total cost of the item,
 #    including tax.
 
-#    If the user does not provide a tax rate it should default to 5% 
+#    If the user does not provide a tax rate it should default to 5%
+
+def cost_with_tax(tax_rate, state, amount):
+
+    """This function is to calculate the total item cost with state tax.
+    Default state tax is 5%, except California is 7%.
+    """
+
+    tax_rate = 0.05
+    if state == "CA" or "Ca" or "ca":
+        item_cost = (0.07 * amount) + amount
+    else:
+        item_cost = (tax_rate * amount) + amount
+
+    return item_cost
+
 
 #####################################################################
 # PART TWO
 
 # 1. (a) Write a function, `is_berry()`, which takes a fruit name as a string
-#        and returns a boolean if the fruit is a "strawberry", "cherry", or 
+#        and returns a boolean if the fruit is a "strawberry", "cherry", or
 #        "blackberry".
+
+def is_berry(fruit_name):
+    """
+    This function is to check whether the input fruit is one of the berry.
+
+    """
+
+    berry = ["strawberry", "cherry", "blackberry"]
+    if fruit_name in berry:
+        return True
+    else:
+        return False
+
+is_berry('apple')
+
 
 #    (b) Write another function, shipping_cost(), which calculates shipping cost
 #        by taking a fruit name as a string, calling the `is_berry()` function 
@@ -43,7 +84,7 @@
 
 # PART THREE
 
-# 1. Write a function ``increment()`` with a nested inner function, ``add()`` 
+# 1. Write a function ``increment()`` with a nested inner function, ``add()``
 #    inside of it. The outer function should take ``x``, an integer which
 #    defaults to 1. The inner function should take ``y`` and add ``x`` and ``y`` together.
 
