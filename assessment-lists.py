@@ -69,10 +69,13 @@ def foods_in_common(foods1, foods2):
         []
 
     """
-    if set(foods1) ^ set(foods2):
+    foods1 = set(foods1)
+    foods2 = set(foods2)
+
+    common_food = foods1 & foods2
+    common_food = list(common_food)
+    if common_food == {}:
         print []
-    else:
-        common_food = foods1 + foods2
 
     return common_food
 
@@ -92,7 +95,9 @@ def every_other_item(items):
        ['you', 'are', 'good', 'at', 'code']
     """
 
-    return ['the wrong thing']
+    return_item = items[::2]
+
+    return return_item
 
 
 def largest_n_items(items, n):
@@ -115,9 +120,12 @@ def largest_n_items(items, n):
 
         >>> largest_n_items([3, 3, 3, 2, 1], 2)
         [3, 3]
-    """
+        """
+    import heapq
 
-    return []
+    n_largest = heapq.nlargest(n, items)
+
+    return n_largest
 
 
 #####################################################################
