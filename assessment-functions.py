@@ -25,13 +25,12 @@ PART ONE:
 
 #    If the user does not provide a tax rate it should default to 5%
 
-def cost_with_tax(tax_rate, state, amount):
+def cost_with_tax(tax_rate = 0.05, state, amount):
 
     """This function is to calculate the total item cost with state tax.
     Default state tax is 5%, except California is 7%.
     """
 
-    tax_rate = 0.05
     if state == "CA" or "Ca" or "ca":
         item_cost = (0.07 * amount) + amount
     else:

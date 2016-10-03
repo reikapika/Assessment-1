@@ -117,7 +117,7 @@ def is_divisible_by_three(x):
     else:
         return False
 
-is_divisible_by_three(7)
+is_divisible_by_three(9)
 
 
 # 7. Write a function called 'num_spaces' that takes a sentence as one string and
@@ -137,8 +137,7 @@ num_spaces('It is getting chilly in SF.')
 #    percentage should be optional; if not given, it should
 #    default to 15%.
 
-tip = 0.15
-def total_meal_price(price,tip):
+def total_meal_price(price,tip = 0.15):
     return price * tip + price
 
 
@@ -153,7 +152,17 @@ def total_meal_price(price,tip):
 #    Print sign and parity.
 
 def sign_and_parity(x):
-    if x % 2 or x > 0:
+    if x % 2 == 0 and x > 0:
+        return ["Even", "Positive"]
+    elif x % 2 == 0 and x < 0:
+        return ["Even", "Negative"]
+    elif x % 2 != 0 and x > 0:
+        return ["Odd", "Positive"]
+    elif x % 2 != 0 and x < 0:
+        return ["Odd", "Negative"]
+
+    sign, parity = x
+
 
 
 ################################################################################
@@ -164,6 +173,10 @@ def sign_and_parity(x):
 #    job title defaults to "Engineer" if a job title is not passed in.
 #    Return the person's title and name in one string.
 
+def full_title(name,title="Engineer"):
+
+    return title + " " + name
+
 # 2. Given a recipient name & job title and a sender name,
 #    print the following letter:
 #
@@ -173,6 +186,11 @@ def sign_and_parity(x):
 #    Use the function from #1 to construct the full title for the letter's
 #    greeting.
 
+def write_letter(recipient_name,title="Engineer",sender_name="Balloonicorn"):
+
+    return "Dear" + " " + title + " " + recipient_name +", " + "I think you are amazing! Sincerely, " + sender_name
+
+# I got the same result as the test is expected, but not sure why it is not passed for this one. :(
 
 #####################################################################
 # END OF PRACTICE: You can ignore everything below.
