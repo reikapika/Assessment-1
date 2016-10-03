@@ -97,14 +97,38 @@ repeat_string('hi',3)
 #    than 0" if higher than zero and "Lower than 0" if lower
 #    than zero. If the integer is 0 print "Zero".
 
+def print_sign(x):
+    if x > 0 :
+        print "Higher than 0"
+    elif x < 0:
+        print "Lower than 0"
+    elif x == 0:
+        print "Zero"
+
+print_sign(5)
 
 # 6. Write a function called 'is_divisible_by_three' that takes an integer and returns a
 #    boolean (True or False), depending on whether the number
 #    is evenly divisible by 3.
 
+def is_divisible_by_three(x):
+    if x % 3 == 0:
+        return True
+    else:
+        return False
+
+is_divisible_by_three(7)
+
 
 # 7. Write a function called 'num_spaces' that takes a sentence as one string and
 #    returns the number of spaces.
+
+def num_spaces(sentence):
+    total_spaces = sentence.count(' ')
+    return total_spaces
+
+num_spaces('It is getting chilly in SF.')
+
 
 
 # 8. Write a function called 'total_meal_price' that can be passed a meal price and a
@@ -112,6 +136,10 @@ repeat_string('hi',3)
 #    (price + price * tip). **However:** passing in the tip
 #    percentage should be optional; if not given, it should
 #    default to 15%.
+
+tip = 0.15
+def total_meal_price(price,tip):
+    return price * tip + price
 
 
 # 9. Write a function called 'sign_and_parity' that takes an integer as an argument and
@@ -123,6 +151,9 @@ repeat_string('hi',3)
 #    on a number and unpack what is returned into two
 #    variables --- sign and parity (whether it's even or odd).
 #    Print sign and parity.
+
+def sign_and_parity(x):
+    if x % 2 or x > 0:
 
 
 ################################################################################

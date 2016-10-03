@@ -124,7 +124,7 @@ def largest_n_items(items, n):
     import heapq
 
     n_largest = heapq.nlargest(n, items)
-
+    n_largest.sort()
     return n_largest
 
 
