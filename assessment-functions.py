@@ -6,8 +6,7 @@ PART ONE:
     >>>cost_with_tax(0.05,CA,5)
     5.25
 
-
-
+    Am I supposed to create this docstrings on my own???
 """
 # PART ONE
 
@@ -25,7 +24,7 @@ PART ONE:
 
 #    If the user does not provide a tax rate it should default to 5%
 
-def cost_with_tax(tax_rate = 0.05, state, amount):
+def cost_with_tax(state, amount,tax_rate = 0.05):
 
     """This function is to calculate the total item cost with state tax.
     Default state tax is 5%, except California is 7%.
@@ -38,6 +37,7 @@ def cost_with_tax(tax_rate = 0.05, state, amount):
 
     return item_cost
 
+cost_with_tax('ca',5)
 
 #####################################################################
 # PART TWO
@@ -65,6 +65,14 @@ is_berry('apple')
 #        by taking a fruit name as a string, calling the `is_berry()` function 
 #        within the `shipping_cost()` function and returns `0` if ``is_berry()
 #        == True``, and `5` if ``is_berry() == False``.
+
+def shipping_cost(fruit_name):
+    if is_berry(fruit_name) == True:
+        return 0
+    else:
+        return 5
+
+shipping_cost('cherry')
 
 # 2. (a) Write a function, `is_hometown()`, which takes a town name as a string
 #        and evaluates to `True` if it is your hometown, and `False` otherwise.
